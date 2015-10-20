@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 #this script has been developed under CentOS and has been tested with CentOS 6.7 and Oracle Linux Server 6.4
-#it requires python 2.x and root privileges
+#it requires python 2.x and root privileges (to	read the shadow	file)
 
 import pwd
 import grp
@@ -10,12 +10,15 @@ import operator
 import re
 import os
 import csv
+import time
+
+csvfilename = str(os.uname()[1].split(".")[0]) + "_UserGroupList_" + str(time.strftime("%Y%m%d")) + ".csv"				#builds the filename with the hostname, the arbitrary title, the date and the extension
 
 users = []																#create emtpy user list
 for u in pwd.getpwall():														#retrieve and walk the user list
         users.append(u[0])														#populate the user list
 
-with open('list.csv', 'wb') as csvfile:													#setup the csv file
+with open(csvfilename, 'wb') as csvfile:												#setup the csv file
 	listwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)					#setup the csv file
 	listwriter.writerow(["Username", "Primary group", "other groups", "locked", "non-system user", "last access", "home dir"])	#setup the cloumn headers in the csv file
 
