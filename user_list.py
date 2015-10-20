@@ -1,5 +1,8 @@
 #! /usr/bin/env python
 
+#this script has been developed under CentOS and has been tested with CentOS 6.7 and Oracle Linux Server 6.4
+#it requires python 2.x and root privileges
+
 import pwd
 import grp
 import spwd
