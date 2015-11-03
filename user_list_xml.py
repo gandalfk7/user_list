@@ -45,7 +45,7 @@ for u in pwd.getpwall():														#retrieve and walk the user list
 file.write('<?xml version="1.0" encoding="utf-8"?><html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><head><style>\n')
 file.write('table {border-collapse: collapse;}\n')
 file.write('table, td, th {border: 1px solid gray;}\n')
-file.write('</style></head><body style="font-size: 11pt; font-family: Verdana, Arial;"><table><tr class="sep" style="background-color: silver;"><td><b>Username</b></td><td><b>Primary Group</b></td><td><b>Other Groups</b></td><td><b>Locked</b></td><td><b>Type</b></td><td><b>Last Access</b></td><td><b>Home Dir</b></td></tr>\n')
+file.write('</style></head><body style="font-size: 11pt; font-family: Verdana, Arial;"><table><tr class="sep" style="background-color: silver;"><td><b>Username</b></td><td><b>Primary Group</b></td><td><b>Other Groups</b></td><td><b>Locked</b></td><td><b>User Type</b></td><td><b>Last Access</b></td><td><b>Home Dir</b></td></tr>\n')
 
 for user in users:														#main loop, for every user gets the needed data
 	group = [g.gr_name for g in grp.getgrall() if user in g.gr_mem]								#gets the groups the user is member of (but not the primary)
