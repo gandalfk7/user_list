@@ -59,7 +59,7 @@ for user in users:														#main loop, for every user gets the needed data
 	else: sys_usr = "System"												#
 	if "!!" in spwd.getspnam(user).sp_pwd: usr_lock = "yes"									#to understand if the user is locked or not, looks for !! in the password
 	else: usr_lock = " "													#
-	f=os.popen("last " + user + " | tail -n 3 | grep " + user)								#command used to retrieve the last access
+	f=os.popen("last " + user + " | head -n 1 | grep " + user)								#command used to retrieve the last access
 	usr_lastacc = f.readlines()												#read the output of the command for the last access
 	rep_usr_lastacc = str(usr_lastacc)											#transforms the	array in a usable object
 	str_usr_lastacc = rep_usr_lastacc.replace("[","").replace("]","").replace(",","").replace("'","").rstrip()		#sanitizes the string
