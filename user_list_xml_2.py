@@ -71,12 +71,12 @@ for user in users:														#main loop, for every user gets the needed data
 		user_realname = otherfields.split("ATTRIBS",1)[1].split(',')[1]
 		user_type = otherfields.split("ATTRIBS",1)[1].split(',')[2]
 		user_company = otherfields.split("ATTRIBS",1)[1].split(',')[3]
-		user_tbd = otherfields.split("ATTRIBS",1)[1].split(',')[4]
+#		user_tbd = otherfields.split("ATTRIBS",1)[1].split(',')[4]
 	else: 
 		user_realname = "_NOT_SET"
 		user_type = "_NOT_SET"
 		user_company = "_NOT_SET"
-		user_tbd = "_NOT_SET"
+#		user_tbd = "_NOT_SET"
 #
 	file.write(line_open + user + line_mid + main_gr + line_mid + str_group + line_mid + usr_lock + line_mid + user_realname + line_mid + user_type + line_mid + user_company + line_mid + sys_usr + line_mid + str_usr_lastacc + line_mid + home + line_close)
 #	print "-----------------------------------------------------------"							#DEBUG OUTPUT
